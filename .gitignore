@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # use glob syntax.
 syntax: glob
 *.ser
@@ -44,3 +45,17 @@ build.log
 #SHITTY output not in target directory
 build.log
 /bin/
+=======
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+>>>>>>> branch 'master' of git@github.com:gessnerfl/logback-gson-formatter.git
