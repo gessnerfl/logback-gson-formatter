@@ -21,8 +21,8 @@ public class GsonFormatter implements JsonFormatter {
     }
 
     @Override
-    public String toJsonString(Map m) throws IOException {
-        return gson.toJson(m);
+    public String toJsonString(Map logData) throws IOException {
+        return gson.toJson(logData);
     }
 
     public Gson getGson() {
