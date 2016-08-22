@@ -1,4 +1,4 @@
-package org.gessnerfl.logback.gson;
+package de.gessnerfl.logback.gson;
 
 import java.io.IOException;
 import java.util.Map;

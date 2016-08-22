@@ -1,4 +1,4 @@
-package org.gessnerfl.logback.gson;
+package de.gessnerfl.logback.gson;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,8 @@ import java.util.TreeMap;
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
+
+import de.gessnerfl.logback.gson.GsonFormatter;
 
 public class GsonFormatterTest {
 	
