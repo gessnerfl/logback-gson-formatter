@@ -2,7 +2,6 @@ package de.gessnerfl.logback.gson;
 
 import static org.junit.Assert.*;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
