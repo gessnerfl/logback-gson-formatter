@@ -25,28 +25,11 @@ dependencies {
 	testCompile group: 'org.hamcrest', name: 'hamcrest-junit', version:'2.0.0.0'
 }
 
-publishing {
-	publications {
-		BintrayPublication(MavenPublication) {
-			from components.java
-			groupId project.group
-			artifactId project.name
-			version project.version
-		}
-	}
-}
-
 bintray {
 	user = project.hasProperty('bintrayUser') ? project.getProperty('bintrayUser') : null
 	key = project.hasProperty('bintrayKey') ? project.getProperty('bintrayKey') : null
-  
-	filesSpec {
-		from 'build/libs'
-		into "org/fhw/gradle-wildfly-plugin/$version"
-		include '*.jar'
-	}
 	
-	publications = ['BintrayPublication']
+	configurations = ['archives']
 	dryRun = false
 	publish = true
 	pkg {
