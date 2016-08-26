@@ -2,8 +2,8 @@ language: java
 jdk:
 - oraclejdk7
 sudo: false
-install: ./installViaTravis.sh
-script: ./buildViaTravis.sh
+install: ./installViaTravisCI.sh
+script: ./buildViaTravisCI.sh
 cache:
   directories:
   - $HOME/.gradle/caches
