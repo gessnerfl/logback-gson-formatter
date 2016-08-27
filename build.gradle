@@ -48,9 +48,8 @@ bintray {
 	publish = true
 	pkg {
 		repo = 'oss-de.gessnerfl'
-		userOrg = 'gessnerlf'
 
-		name = project.name
+		name = user
 		desc = project.description
 
 		websiteUrl = 'https://github.com/gessnerfl/logback-gson-formatter'
