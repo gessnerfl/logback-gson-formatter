@@ -1,12 +1,15 @@
-buildscript { repositories { jcenter() } }
+buildscript {
+	repositories { jcenter() }
+}
 
 plugins {
-	id 'nebula.release' version '4.1.0'
-	id 'nebula.nebula-bintray' version '3.3.4'
+	id "com.cinnober.gradle.semver-git" version "2.2.2"
+	id "com.jfrog.bintray" version "1.7"
 }
 
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 group = 'de.gessnerfl.logback'
 description = """Logback :: GSON :: Formatter"""
@@ -25,40 +28,55 @@ dependencies {
 	testCompile group: 'org.hamcrest', name: 'hamcrest-junit', version:'2.0.0.0'
 }
 
+publishing {
+	publications {
+		BintrayPublication(MavenPublication) {
+			from components.java
+			groupId project.group
+			artifactId project.name
+			version project.version
+		}
+	}
+}
+
 bintray {
 	user = project.hasProperty('bintrayUser') ? project.getProperty('bintrayUser') : null
 	key = project.hasProperty('bintrayKey') ? project.getProperty('bintrayKey') : null
-	
-	configurations = ['archives']
+
+	publications = ['BintrayPublication']
 	dryRun = false
 	publish = true
 	pkg {
-	  repo = 'oss-de.gessnerfl'
-	  userOrg = 'gessnerlf'
-	  
-	  name = project.name
-	  desc = project.description
-	  
-	  websiteUrl = 'https://github.com/gessnerfl/logback-gson-formatter'
-	  issueTrackerUrl = 'https://github.com/gessnerfl/logback-gson-formatter/issues'
-	  vcsUrl = 'https://github.com/gessnerfl/logback-gson-formatter.git'
-	  licenses = ['Apache-2.0']
-	  labels = ['logback', 'gson', 'formatter']
-	  publicDownloadNumbers = true
-	  attributes = [:]
-	  version {
-		name = project.version
-		vcsTag = 'v'+project.version
+		repo = 'oss-de.gessnerfl'
+		userOrg = 'gessnerlf'
+
+		name = project.name
+		desc = project.description
+
+		websiteUrl = 'https://github.com/gessnerfl/logback-gson-formatter'
+		issueTrackerUrl = 'https://github.com/gessnerfl/logback-gson-formatter/issues'
+		vcsUrl = 'https://github.com/gessnerfl/logback-gson-formatter.git'
+		licenses = ['Apache-2.0']
+		labels = [
+			'logback',
+			'gson',
+			'formatter'
+		]
+		publicDownloadNumbers = true
 		attributes = [:]
-		gpg {
-			sign = true
-			passphrase = project.hasProperty('gpgPassphrase') ? project.getProperty('gpgPassphrase') : null
+		version {
+			name = project.version
+			vcsTag = 'v'+project.version
+			attributes = [:]
+			gpg {
+				sign = true
+				passphrase = project.hasProperty('gpgPassphrase') ? project.getProperty('gpgPassphrase') : null
+			}
+			mavenCentralSync {
+				sync = true
+				user = project.hasProperty('sonatypeUsername') ? project.getProperty('sonatypeUsername') : null
+				password = project.hasProperty('sonatypePassword') ? project.getProperty('sonatypePassword') : null
+			}
 		}
-		mavenCentralSync {
-			sync = true
-			user = project.hasProperty('sonatypeUsername') ? project.getProperty('sonatypeUsername') : null
-			password = project.hasProperty('sonatypePassword') ? project.getProperty('sonatypePassword') : null
-		}
-	  }
 	}
-  }
+}
