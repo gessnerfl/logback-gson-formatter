@@ -53,6 +53,7 @@ bintray {
 
 		name = user
 		desc = project.description
+		userOrg = null
 
 		websiteUrl = 'https://github.com/gessnerfl/logback-gson-formatter'
 		issueTrackerUrl = 'https://github.com/gessnerfl/logback-gson-formatter/issues'
