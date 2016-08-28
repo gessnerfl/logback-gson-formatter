@@ -58,13 +58,9 @@ bintray {
 	user = project.hasProperty('bintrayUser') ? project.getProperty('bintrayUser') : null
 	key = project.hasProperty('bintrayKey') ? project.getProperty('bintrayKey') : null
 
-	publications = ['BintrayPublication']
+    configurations = ['archives']
 	dryRun = false
 	publish = true
-	filesSpec {
-		from 'build/libs'
-		into project.version
-	}
 	pkg {
 		repo = 'oss-de.gessnerfl'
 
