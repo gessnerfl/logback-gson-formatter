@@ -63,7 +63,7 @@ bintray {
 	publish = true
 	filesSpec {
 		from 'build/libs'
-		into '.'
+		into project.version
 	}
 	pkg {
 		repo = 'oss-de.gessnerfl'
