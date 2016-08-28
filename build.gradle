@@ -64,7 +64,7 @@ bintray {
 	pkg {
 		repo = 'oss-de.gessnerfl'
 
-		name = user
+		name = project.name
 		desc = project.description
 		userOrg = null
 
