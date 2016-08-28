@@ -80,8 +80,8 @@ bintray {
 		publicDownloadNumbers = true
 		attributes = [:]
 		version {
-			name = project.version
-			vcsTag = 'v'+project.version
+			name = project.name
+			vcsTag = project.version
 			attributes = [:]
 			gpg {
 				sign = true
