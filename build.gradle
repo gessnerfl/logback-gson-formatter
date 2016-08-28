@@ -61,6 +61,10 @@ bintray {
 	publications = ['BintrayPublication']
 	dryRun = false
 	publish = true
+	filesSpec {
+		from 'build/libs'
+		into '.'
+	}
 	pkg {
 		repo = 'oss-de.gessnerfl'
 
