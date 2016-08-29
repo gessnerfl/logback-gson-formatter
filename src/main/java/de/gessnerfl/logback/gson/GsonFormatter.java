@@ -8,6 +8,12 @@ import ch.qos.logback.contrib.json.JsonFormatter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ * GSON-specific implementation of the {@link JsonFormatter}.
+ *
+ * @author Florian Gessner
+ *
+ */
 public class GsonFormatter implements JsonFormatter {
 
     public static final int BUFFER_SIZE = 512;
