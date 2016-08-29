@@ -117,18 +117,18 @@ bintray {
 		publicDownloadNumbers = true
 		attributes = [:]
 		version {
-			name = project.name
+			name = project.version
 			vcsTag = project.version
 			attributes = [:]
 			gpg {
 				sign = true
 				passphrase = project.hasProperty('gpgPassphrase') ? project.getProperty('gpgPassphrase') : null
 			}
-			mavenCentralSync {
-				sync = true
-				user = project.hasProperty('sonatypeUsername') ? project.getProperty('sonatypeUsername') : null
-				password = project.hasProperty('sonatypePassword') ? project.getProperty('sonatypePassword') : null
-			}
+//			mavenCentralSync {
+//				sync = true
+//				user = project.hasProperty('sonatypeUsername') ? project.getProperty('sonatypeUsername') : null
+//				password = project.hasProperty('sonatypePassword') ? project.getProperty('sonatypePassword') : null
+//			}
 		}
 	}
 }
