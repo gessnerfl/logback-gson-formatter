@@ -1,6 +1,7 @@
 # logback-gson-formatter
 
-[![Build Status](https://travis-ci.org/gessnerfl/logback-gson-formatter.svg?branch=master)](https://travis-ci.org/gessnerfl/logback-gson-formatter)  [ ![Download](https://api.bintray.com/packages/gessnerfl/oss-de.gessnerfl/logback-gson-formatter/images/download.svg) ](https://bintray.com/gessnerfl/oss-de.gessnerfl/logback-gson-formatter/_latestVersion)
+[![Build Status](https://github.com/gessnerfl/logback-gson-formatter/workflows/CI%2FCD/badge.svg)](https://github.com/gessnerfl/logback-gson-formatter/workflows/CI%2FCD/badge.svg)
+[ ![Download](https://api.bintray.com/packages/gessnerfl/oss-de.gessnerfl/logback-gson-formatter/images/download.svg) ](https://bintray.com/gessnerfl/oss-de.gessnerfl/logback-gson-formatter/_latestVersion)
 
 Logback JSON Formatter using Google GSON library
 
